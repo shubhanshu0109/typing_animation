@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    /*align iten horizontally*/
+    justify-content: center;
+    /*align iten horizontally*/
+    min-height: 100vh;
+    background: #343f4f;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 80vw;
+    min-height: 70vh;
+    border: 5px dashed rgb(255, 153, 0);
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: #343f4f;
+}
+
+.wrapper .static-txt {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.dynamic-txt li {
+    color: rgb(240, 32, 32);
+    list-style: none;
+    font-size: 55px;
+    font-weight: 450;
+    position: relative;
+    top: 0;
+    animation: slide 10s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.wrapper .dynamic-txt {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txt li span {
+    position: relative;
+}
+
+.dynamic-txt li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #343f4f;
+    border-left: 2px solid rgb(240, 32, 32);
+    animation: typing 2.5s steps(10) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
